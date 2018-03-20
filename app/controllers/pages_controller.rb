@@ -3,4 +3,19 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def school
+  end
+
+  def information
+  end
+
+  def pedagogie
+  end
+
+  def programme
+  end
+
+  def contact
+  end
 end

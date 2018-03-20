@@ -1,0 +1,2 @@
+class GeneralDocument < ApplicationRecord
+end

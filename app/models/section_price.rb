@@ -1,0 +1,2 @@
+class SectionPrice < ApplicationRecord
+end
