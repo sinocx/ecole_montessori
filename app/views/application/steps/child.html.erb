@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="container">
+    <%= simple_form_for @application, method: :patch, url: wizard_path do |f| %>
+      <% if f.object.errors.any? %>
+        <div class="error_messages">
+          <% f.object.errors.full_messages.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      <% end %>
+
+      <fieldset>
+        <legend>Pet Identity</legend>
+          <%= f.input :child_first_name %>
+          <%= f.input :child_last_name %>
+          <%= f.input :child_gender, as: :radio_buttons, collection: [['0', 'Fille'], ['1', 'Garçon']], label_method: :second, value_method: :first %>
+          <%= f.input :child_birth_date %>
+          <%= f.input :child_nationality %>
+          <%= f.input :child_first_lang %>
+          <%= f.input :child_snd_lang %>
+          <%= f.input :montessori_before %>
+          <%= f.input :workshop %>
+          <%= f.input :comment %>
+          <%= f.submit 'Next Step' %>
+        </fieldset>
+    <% end %>
+  </div>
+</div>

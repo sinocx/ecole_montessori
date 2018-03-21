@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 gem "hungryform-rails"
+gem 'wicked', '1.3.1'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

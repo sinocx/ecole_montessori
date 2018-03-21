@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class="container">
+    <%= simple_form_for @application, method: :patch, url: wizard_path do |f| %>
+      <% if f.object.errors.any? %>
+        <div class="error_messages">
+          <% f.object.errors.full_messages.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      <% end %>
+
+      <fieldset>
+        <legend>Information du père</legend>
+          <%= f.input :father_first_name %>
+          <%= f.input :father_last_name  %>
+          <%= f.input :father_lang %>
+          <%= f.input :father_situation %>
+          <%= f.input :father_job %>
+          <%= f.input :father_fiscal  %>
+          <%= f.input :father_address %>
+          <%= f.input :father_city %>
+          <%= f.input :father_zipcode %>
+          <%= f.input :father_email %>
+          <%= f.input :father_phone%>
+          <%= f.input :father_mobile%>
+        <div>
+          <%= f.submit 'Next Step' %>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>
