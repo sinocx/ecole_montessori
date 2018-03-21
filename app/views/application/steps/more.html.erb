@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="container">
+    <%= simple_form_for @application, method: :patch, url: wizard_path do |f| %>
+      <% if f.object.errors.any? %>
+        <div class="error_messages">
+          <% f.object.errors.full_messages.each do |error| %>
+            <p><%= error %></p>
+          <% end %>
+        </div>
+      <% end %>
+
+      <fieldset>
+        <legend>Information du père</legend>
+          <%= f.input :knew_the_school %>
+          <%= f.input :start_date  %>
+          <%= f.input :child_atmosphere %>
+
+        <div>
+          <%= f.submit 'Valider' %>
+        </div>
+      </fieldset>
+    <% end %>
+  </div>
+</div>
