@@ -5,12 +5,9 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    @application = Application.new(params_application)
-    if @application.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    @application = Application.new
+    @application.save(validate: false)
+    redirect_to application_step_path(@application, Application.form_steps.first)
   end
   private
   def params_application
@@ -30,7 +27,8 @@ class ApplicationsController < ApplicationController
       :mother_situation,
       :mother_job,
       :mother_fiscal,
-      :mother_addres,
+      :mother_address,
+      :mother_city,
       :mother_zipcode,
       :mother_email,
       :mother_phone,
@@ -45,7 +43,10 @@ class ApplicationsController < ApplicationController
       :father_zipcode,
       :father_email,
       :father_phone,
-      :father_mobile
+      :father_mobile,
+      :knew_the_school,
+      :start_date,
+      :child_atmosphere
     )
   end
 end

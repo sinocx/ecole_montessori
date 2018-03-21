@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
- resources :applications, only: [ :new, :create]
+  resources :applications, only: [ :new, :create] do
+    resources :steps, only: [:show, :update], controller: 'application/steps'
+  end
   devise_for :users
   root to: 'pages#home'
   get 'school', to: "pages#school"
